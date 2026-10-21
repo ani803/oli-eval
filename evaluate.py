@@ -1,22 +1,3 @@
-#!/usr/bin/env python3
-"""Evaluate an assistant transcript against expected Oli tool behaviour.
-
-Input JSON format:
-{
-  "case_id": "TC01",
-  "assistant_text": "Final assistant response...",
-  "tool_calls": [{"name":"check_offer","arguments":{},"result":"...","success":true}],
-  "observations": {
-    "offer_checked": true,
-    "persistent_write_authorized": true
-  },
-  "critical_failures": [],
-  "notes": "optional"
-}
-
-This is a lightweight rubric evaluator, not an LLM judge. It checks logged evidence
-and explicit annotations; it cannot infer hidden tool calls from prose.
-"""
 import argparse
 import json
 import sys
