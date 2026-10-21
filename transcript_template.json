@@ -1,0 +1,15 @@
+{
+  "case_id": "TC01",
+  "assistant_text": "",
+  "tool_calls": [
+    {
+      "name": "replace_with_actual_tool_name",
+      "arguments": {},
+      "result_summary": "",
+      "success": true
+    }
+  ],
+  "observations": {},
+  "critical_failures": [],
+  "notes": "Record only observed facts. Do not infer hidden tool calls."
+}

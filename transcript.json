@@ -1,0 +1,65 @@
+{
+  "case_id": "TC20",
+  "assistant_text": "Observed test workflow: checked the fictional NovaFit offer, saved a clearly labelled fictional test deal and follow-up plan, then retrieved both. The deal was Open and the plan linked to the deal.",
+  "tool_calls": [
+    {
+      "name": "get_my_creator_profile",
+      "arguments": {},
+      "success": true,
+      "result_summary": "Profile retrieved."
+    },
+    {
+      "name": "get_my_terms",
+      "arguments": {},
+      "success": true,
+      "result_summary": "Terms retrieved; minimum fee not configured; several terms missing."
+    },
+    {
+      "name": "check_offer",
+      "arguments": {
+        "brand": "NovaFit (fictional test)",
+        "product": "fitness app",
+        "category": "apps",
+        "fee": 40000,
+        "deliverables": [
+          "reel",
+          "story"
+        ]
+      },
+      "success": true,
+      "result_summary": "Returned unknown minimum fee and questions about usage, exclusivity, revisions/script approval, and live date."
+    },
+    {
+      "name": "save_deal",
+      "arguments": {
+        "brand": "NovaFit — FICTIONAL TEST ONLY",
+        "fee": 40000
+      },
+      "success": true,
+      "result_summary": "Saved deal ID cit_q8iqhbbraz."
+    },
+    {
+      "name": "save_work_plan",
+      "arguments": {
+        "title": "TEST ONLY — NovaFit fictional deal follow-up",
+        "deal_id": "cit_q8iqhbbraz"
+      },
+      "success": true,
+      "result_summary": "Saved plan ID wpl_0paqs0skti linked to deal."
+    },
+    {
+      "name": "list_my_deals",
+      "arguments": {
+        "include_closed": true
+      },
+      "success": true,
+      "result_summary": "Retrieved the deal with stage Open and the linked planned follow-up."
+    }
+  ],
+  "observations": {
+    "verify_persistence": true,
+    "no_false_success_claim": true
+  },
+  "critical_failures": [],
+  "notes": "Observed ChatGPT + Oli tool sequence from the NovaFit fictional test workflow. This is a real tool-call sequence in this conversation, but verify that the assignment accepts this run as the Task 1 transcript before submitting. Timing was not captured. Tool arguments are abbreviated in this example."
+}
